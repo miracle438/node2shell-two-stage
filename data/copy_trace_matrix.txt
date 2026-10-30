@@ -1,0 +1,276 @@
+===== split out=0x330 =====
+[INFO] file=poison_full.bro total=23069747 stage1=23069720 stage2=27 in_chunk=16384 out_chunk=816
+[CALL s1 #1] in=16384 consumed=1028 left_in=15356 out=816 left_out=0 total=816 -> NEEDS_MORE_OUTPUT code=3
+[CALL s1 #2] in=16384 consumed=16384 left_in=0 out=816 left_out=608 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #3] in=16384 consumed=16384 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #4] in=16384 consumed=16384 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #5] in=16384 consumed=16384 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #6] in=16384 consumed=16384 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[INFO] stage1 done: cur_off=23069720 left=0
+[CALL s2 #1411] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1412] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1413] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1414] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1415] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1416] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1417] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1418] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1419] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1420] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1421] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1422] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1423] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1424] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1425] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1426] in=1 consumed=1 left_in=0 out=816 left_out=608 total=1232 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1427] in=1 consumed=1 left_in=0 out=816 left_out=0 total=2048 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1428] in=1 consumed=1 left_in=0 out=816 left_out=0 total=2864 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1429] in=1 consumed=1 left_in=0 out=816 left_out=0 total=3680 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1430] in=1 consumed=1 left_in=0 out=816 left_out=0 total=4496 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1431] in=1 consumed=1 left_in=0 out=816 left_out=0 total=5312 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1432] in=1 consumed=1 left_in=0 out=816 left_out=0 total=6128 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1433] in=1 consumed=1 left_in=0 out=816 left_out=0 total=6944 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1434] in=1 consumed=1 left_in=0 out=816 left_out=0 total=7760 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1435] in=1 consumed=1 left_in=0 out=816 left_out=0 total=8576 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1436] in=1 consumed=1 left_in=0 out=816 left_out=0 total=9392 -> NEEDS_MORE_INPUT code=2
+[COPY] pos=67065040 len=4 rb=0x51b000000080 size=1024 mask=1023 roundtrips=9 partial_out=10208 buf_len=28
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==6379==ERROR: AddressSanitizer: SEGV on unknown address 0x51b003ff5550 (pc 0x5f039fd8ca1d bp 0x7ffca0fec460 sp 0x7ffca0fec270 T0)
+==6379==The signal is caused by a WRITE memory access.
+    #0 0x5f039fd8ca1d in memcpy /usr/include/x86_64-linux-gnu/bits/string_fortified.h:29
+    #1 0x5f039fd8ca1d in memmove16 dbg3-v120/c/dec/decode.c:202
+    #2 0x5f039fd8ca1d in ProcessCommandsInternal dbg3-v120/c/dec/decode.c:2299
+    #3 0x5f039fd8ca1d in ProcessCommands dbg3-v120/c/dec/decode.c:2362
+    #4 0x5f039fd9461f in BrotliDecoderDecompressStream dbg3-v120/c/dec/decode.c:2804
+    #5 0x5f039fd99188 in step /home/wang/brotli-lab/harness_two_stage.c:37
+    #6 0x5f039fd999a2 in main /home/wang/brotli-lab/harness_two_stage.c:97
+    #7 0x755a1a02a1c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #8 0x755a1a02a28a in __libc_start_main_impl ../csu/libc-start.c:360
+    #9 0x5f039fd7e4e4 in _start (/home/wang/brotli-lab/build-v120/harness_two_stage_copy_asan+0x34e4) (BuildId: 81e52bf62fe59a17ce5e6baa3b5742cbb621e671)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /usr/include/x86_64-linux-gnu/bits/string_fortified.h:29 in memcpy
+==6379==ABORTING
+rc=1
+===== split out=0x1000 =====
+[INFO] file=poison_full.bro total=23069747 stage1=23069720 stage2=27 in_chunk=16384 out_chunk=4096
+[CALL s1 #1] in=16384 consumed=16384 left_in=0 out=4096 left_out=3072 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #2] in=16384 consumed=16384 left_in=0 out=4096 left_out=4096 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #3] in=16384 consumed=16384 left_in=0 out=4096 left_out=4096 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #4] in=16384 consumed=16384 left_in=0 out=4096 left_out=4096 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #5] in=16384 consumed=16384 left_in=0 out=4096 left_out=4096 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #6] in=16384 consumed=16384 left_in=0 out=4096 left_out=4096 total=1024 -> NEEDS_MORE_INPUT code=2
+[INFO] stage1 done: cur_off=23069720 left=0
+[CALL s2 #1410] in=1 consumed=1 left_in=0 out=4096 left_out=4096 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1411] in=1 consumed=1 left_in=0 out=4096 left_out=4096 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1412] in=1 consumed=1 left_in=0 out=4096 left_out=4096 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1413] in=1 consumed=1 left_in=0 out=4096 left_out=4096 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1414] in=1 consumed=1 left_in=0 out=4096 left_out=4096 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1415] in=1 consumed=1 left_in=0 out=4096 left_out=4096 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1416] in=1 consumed=1 left_in=0 out=4096 left_out=4096 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1417] in=1 consumed=1 left_in=0 out=4096 left_out=4096 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1418] in=1 consumed=1 left_in=0 out=4096 left_out=4096 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1419] in=1 consumed=1 left_in=0 out=4096 left_out=4096 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1420] in=1 consumed=1 left_in=0 out=4096 left_out=4096 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1421] in=1 consumed=1 left_in=0 out=4096 left_out=4096 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1422] in=1 consumed=1 left_in=0 out=4096 left_out=4096 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1423] in=1 consumed=1 left_in=0 out=4096 left_out=4096 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1424] in=1 consumed=1 left_in=0 out=4096 left_out=4096 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1425] in=1 consumed=1 left_in=0 out=4096 left_out=3888 total=1232 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1426] in=1 consumed=1 left_in=0 out=4096 left_out=3280 total=2048 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1427] in=1 consumed=1 left_in=0 out=4096 left_out=2048 total=4096 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1428] in=1 consumed=1 left_in=0 out=4096 left_out=2048 total=6144 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1429] in=1 consumed=1 left_in=0 out=4096 left_out=2048 total=8192 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1430] in=1 consumed=1 left_in=0 out=4096 left_out=2048 total=10240 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1431] in=1 consumed=1 left_in=0 out=4096 left_out=2048 total=12288 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1432] in=1 consumed=1 left_in=0 out=4096 left_out=2048 total=14336 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1433] in=1 consumed=1 left_in=0 out=4096 left_out=2048 total=16384 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1434] in=1 consumed=1 left_in=0 out=4096 left_out=2048 total=18432 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1435] in=1 consumed=1 left_in=0 out=4096 left_out=2048 total=20480 -> NEEDS_MORE_INPUT code=2
+[COPY] pos=67052752 len=4 rb=0x51b000000080 size=1024 mask=1023 roundtrips=21 partial_out=21504 buf_len=28
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==6381==ERROR: AddressSanitizer: SEGV on unknown address 0x51b003ff2550 (pc 0x5c1bab260a1d bp 0x7ffdfb689e40 sp 0x7ffdfb689c50 T0)
+==6381==The signal is caused by a WRITE memory access.
+    #0 0x5c1bab260a1d in memcpy /usr/include/x86_64-linux-gnu/bits/string_fortified.h:29
+    #1 0x5c1bab260a1d in memmove16 dbg3-v120/c/dec/decode.c:202
+    #2 0x5c1bab260a1d in ProcessCommandsInternal dbg3-v120/c/dec/decode.c:2299
+    #3 0x5c1bab260a1d in ProcessCommands dbg3-v120/c/dec/decode.c:2362
+    #4 0x5c1bab26861f in BrotliDecoderDecompressStream dbg3-v120/c/dec/decode.c:2804
+    #5 0x5c1bab26d188 in step /home/wang/brotli-lab/harness_two_stage.c:37
+    #6 0x5c1bab26d9a2 in main /home/wang/brotli-lab/harness_two_stage.c:97
+    #7 0x714e6f62a1c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #8 0x714e6f62a28a in __libc_start_main_impl ../csu/libc-start.c:360
+    #9 0x5c1bab2524e4 in _start (/home/wang/brotli-lab/build-v120/harness_two_stage_copy_asan+0x34e4) (BuildId: 81e52bf62fe59a17ce5e6baa3b5742cbb621e671)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /usr/include/x86_64-linux-gnu/bits/string_fortified.h:29 in memcpy
+==6381==ABORTING
+rc=1
+===== split out=0x4000 =====
+[INFO] file=poison_full.bro total=23069747 stage1=23069720 stage2=27 in_chunk=16384 out_chunk=16384
+[CALL s1 #1] in=16384 consumed=16384 left_in=0 out=16384 left_out=15360 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #2] in=16384 consumed=16384 left_in=0 out=16384 left_out=16384 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #3] in=16384 consumed=16384 left_in=0 out=16384 left_out=16384 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #4] in=16384 consumed=16384 left_in=0 out=16384 left_out=16384 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #5] in=16384 consumed=16384 left_in=0 out=16384 left_out=16384 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #6] in=16384 consumed=16384 left_in=0 out=16384 left_out=16384 total=1024 -> NEEDS_MORE_INPUT code=2
+[INFO] stage1 done: cur_off=23069720 left=0
+[CALL s2 #1410] in=1 consumed=1 left_in=0 out=16384 left_out=16384 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1411] in=1 consumed=1 left_in=0 out=16384 left_out=16384 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1412] in=1 consumed=1 left_in=0 out=16384 left_out=16384 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1413] in=1 consumed=1 left_in=0 out=16384 left_out=16384 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1414] in=1 consumed=1 left_in=0 out=16384 left_out=16384 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1415] in=1 consumed=1 left_in=0 out=16384 left_out=16384 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1416] in=1 consumed=1 left_in=0 out=16384 left_out=16384 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1417] in=1 consumed=1 left_in=0 out=16384 left_out=16384 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1418] in=1 consumed=1 left_in=0 out=16384 left_out=16384 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1419] in=1 consumed=1 left_in=0 out=16384 left_out=16384 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1420] in=1 consumed=1 left_in=0 out=16384 left_out=16384 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1421] in=1 consumed=1 left_in=0 out=16384 left_out=16384 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1422] in=1 consumed=1 left_in=0 out=16384 left_out=16384 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1423] in=1 consumed=1 left_in=0 out=16384 left_out=16384 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1424] in=1 consumed=1 left_in=0 out=16384 left_out=16384 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1425] in=1 consumed=1 left_in=0 out=16384 left_out=16176 total=1232 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1426] in=1 consumed=1 left_in=0 out=16384 left_out=15568 total=2048 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1427] in=1 consumed=1 left_in=0 out=16384 left_out=14336 total=4096 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1428] in=1 consumed=1 left_in=0 out=16384 left_out=14336 total=6144 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1429] in=1 consumed=1 left_in=0 out=16384 left_out=14336 total=8192 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1430] in=1 consumed=1 left_in=0 out=16384 left_out=14336 total=10240 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1431] in=1 consumed=1 left_in=0 out=16384 left_out=14336 total=12288 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1432] in=1 consumed=1 left_in=0 out=16384 left_out=14336 total=14336 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1433] in=1 consumed=1 left_in=0 out=16384 left_out=14336 total=16384 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1434] in=1 consumed=1 left_in=0 out=16384 left_out=14336 total=18432 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1435] in=1 consumed=1 left_in=0 out=16384 left_out=14336 total=20480 -> NEEDS_MORE_INPUT code=2
+[COPY] pos=67052752 len=4 rb=0x51b000000080 size=1024 mask=1023 roundtrips=21 partial_out=21504 buf_len=28
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==6383==ERROR: AddressSanitizer: SEGV on unknown address 0x51b003ff2550 (pc 0x612c3a557a1d bp 0x7ffc64a7b4b0 sp 0x7ffc64a7b2c0 T0)
+==6383==The signal is caused by a WRITE memory access.
+    #0 0x612c3a557a1d in memcpy /usr/include/x86_64-linux-gnu/bits/string_fortified.h:29
+    #1 0x612c3a557a1d in memmove16 dbg3-v120/c/dec/decode.c:202
+    #2 0x612c3a557a1d in ProcessCommandsInternal dbg3-v120/c/dec/decode.c:2299
+    #3 0x612c3a557a1d in ProcessCommands dbg3-v120/c/dec/decode.c:2362
+    #4 0x612c3a55f61f in BrotliDecoderDecompressStream dbg3-v120/c/dec/decode.c:2804
+    #5 0x612c3a564188 in step /home/wang/brotli-lab/harness_two_stage.c:37
+    #6 0x612c3a5649a2 in main /home/wang/brotli-lab/harness_two_stage.c:97
+    #7 0x7045c882a1c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #8 0x7045c882a28a in __libc_start_main_impl ../csu/libc-start.c:360
+    #9 0x612c3a5494e4 in _start (/home/wang/brotli-lab/build-v120/harness_two_stage_copy_asan+0x34e4) (BuildId: 81e52bf62fe59a17ce5e6baa3b5742cbb621e671)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /usr/include/x86_64-linux-gnu/bits/string_fortified.h:29 in memcpy
+==6383==ABORTING
+rc=1
+===== split out=0x10000 =====
+[INFO] file=poison_full.bro total=23069747 stage1=23069720 stage2=27 in_chunk=16384 out_chunk=65536
+[CALL s1 #1] in=16384 consumed=16384 left_in=0 out=65536 left_out=64512 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #2] in=16384 consumed=16384 left_in=0 out=65536 left_out=65536 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #3] in=16384 consumed=16384 left_in=0 out=65536 left_out=65536 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #4] in=16384 consumed=16384 left_in=0 out=65536 left_out=65536 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #5] in=16384 consumed=16384 left_in=0 out=65536 left_out=65536 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #6] in=16384 consumed=16384 left_in=0 out=65536 left_out=65536 total=1024 -> NEEDS_MORE_INPUT code=2
+[INFO] stage1 done: cur_off=23069720 left=0
+[CALL s2 #1410] in=1 consumed=1 left_in=0 out=65536 left_out=65536 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1411] in=1 consumed=1 left_in=0 out=65536 left_out=65536 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1412] in=1 consumed=1 left_in=0 out=65536 left_out=65536 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1413] in=1 consumed=1 left_in=0 out=65536 left_out=65536 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1414] in=1 consumed=1 left_in=0 out=65536 left_out=65536 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1415] in=1 consumed=1 left_in=0 out=65536 left_out=65536 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1416] in=1 consumed=1 left_in=0 out=65536 left_out=65536 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1417] in=1 consumed=1 left_in=0 out=65536 left_out=65536 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1418] in=1 consumed=1 left_in=0 out=65536 left_out=65536 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1419] in=1 consumed=1 left_in=0 out=65536 left_out=65536 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1420] in=1 consumed=1 left_in=0 out=65536 left_out=65536 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1421] in=1 consumed=1 left_in=0 out=65536 left_out=65536 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1422] in=1 consumed=1 left_in=0 out=65536 left_out=65536 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1423] in=1 consumed=1 left_in=0 out=65536 left_out=65536 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1424] in=1 consumed=1 left_in=0 out=65536 left_out=65536 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1425] in=1 consumed=1 left_in=0 out=65536 left_out=65328 total=1232 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1426] in=1 consumed=1 left_in=0 out=65536 left_out=64720 total=2048 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1427] in=1 consumed=1 left_in=0 out=65536 left_out=63488 total=4096 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1428] in=1 consumed=1 left_in=0 out=65536 left_out=63488 total=6144 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1429] in=1 consumed=1 left_in=0 out=65536 left_out=63488 total=8192 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1430] in=1 consumed=1 left_in=0 out=65536 left_out=63488 total=10240 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1431] in=1 consumed=1 left_in=0 out=65536 left_out=63488 total=12288 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1432] in=1 consumed=1 left_in=0 out=65536 left_out=63488 total=14336 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1433] in=1 consumed=1 left_in=0 out=65536 left_out=63488 total=16384 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1434] in=1 consumed=1 left_in=0 out=65536 left_out=63488 total=18432 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1435] in=1 consumed=1 left_in=0 out=65536 left_out=63488 total=20480 -> NEEDS_MORE_INPUT code=2
+[COPY] pos=67052752 len=4 rb=0x51b000000080 size=1024 mask=1023 roundtrips=21 partial_out=21504 buf_len=28
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==6385==ERROR: AddressSanitizer: SEGV on unknown address 0x51b003ff2550 (pc 0x5e6efbf88a1d bp 0x7fff1d3cbe50 sp 0x7fff1d3cbc60 T0)
+==6385==The signal is caused by a WRITE memory access.
+    #0 0x5e6efbf88a1d in memcpy /usr/include/x86_64-linux-gnu/bits/string_fortified.h:29
+    #1 0x5e6efbf88a1d in memmove16 dbg3-v120/c/dec/decode.c:202
+    #2 0x5e6efbf88a1d in ProcessCommandsInternal dbg3-v120/c/dec/decode.c:2299
+    #3 0x5e6efbf88a1d in ProcessCommands dbg3-v120/c/dec/decode.c:2362
+    #4 0x5e6efbf9061f in BrotliDecoderDecompressStream dbg3-v120/c/dec/decode.c:2804
+    #5 0x5e6efbf95188 in step /home/wang/brotli-lab/harness_two_stage.c:37
+    #6 0x5e6efbf959a2 in main /home/wang/brotli-lab/harness_two_stage.c:97
+    #7 0x76998b02a1c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #8 0x76998b02a28a in __libc_start_main_impl ../csu/libc-start.c:360
+    #9 0x5e6efbf7a4e4 in _start (/home/wang/brotli-lab/build-v120/harness_two_stage_copy_asan+0x34e4) (BuildId: 81e52bf62fe59a17ce5e6baa3b5742cbb621e671)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /usr/include/x86_64-linux-gnu/bits/string_fortified.h:29 in memcpy
+==6385==ABORTING
+rc=1
+===== split out=0x100000 =====
+[INFO] file=poison_full.bro total=23069747 stage1=23069720 stage2=27 in_chunk=16384 out_chunk=1048576
+[CALL s1 #1] in=16384 consumed=16384 left_in=0 out=1048576 left_out=1047552 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #2] in=16384 consumed=16384 left_in=0 out=1048576 left_out=1048576 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #3] in=16384 consumed=16384 left_in=0 out=1048576 left_out=1048576 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #4] in=16384 consumed=16384 left_in=0 out=1048576 left_out=1048576 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #5] in=16384 consumed=16384 left_in=0 out=1048576 left_out=1048576 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #6] in=16384 consumed=16384 left_in=0 out=1048576 left_out=1048576 total=1024 -> NEEDS_MORE_INPUT code=2
+[INFO] stage1 done: cur_off=23069720 left=0
+[CALL s2 #1410] in=1 consumed=1 left_in=0 out=1048576 left_out=1048576 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1411] in=1 consumed=1 left_in=0 out=1048576 left_out=1048576 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1412] in=1 consumed=1 left_in=0 out=1048576 left_out=1048576 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1413] in=1 consumed=1 left_in=0 out=1048576 left_out=1048576 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1414] in=1 consumed=1 left_in=0 out=1048576 left_out=1048576 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1415] in=1 consumed=1 left_in=0 out=1048576 left_out=1048576 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1416] in=1 consumed=1 left_in=0 out=1048576 left_out=1048576 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1417] in=1 consumed=1 left_in=0 out=1048576 left_out=1048576 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1418] in=1 consumed=1 left_in=0 out=1048576 left_out=1048576 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1419] in=1 consumed=1 left_in=0 out=1048576 left_out=1048576 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1420] in=1 consumed=1 left_in=0 out=1048576 left_out=1048576 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1421] in=1 consumed=1 left_in=0 out=1048576 left_out=1048576 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1422] in=1 consumed=1 left_in=0 out=1048576 left_out=1048576 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1423] in=1 consumed=1 left_in=0 out=1048576 left_out=1048576 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1424] in=1 consumed=1 left_in=0 out=1048576 left_out=1048576 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1425] in=1 consumed=1 left_in=0 out=1048576 left_out=1048368 total=1232 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1426] in=1 consumed=1 left_in=0 out=1048576 left_out=1047760 total=2048 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1427] in=1 consumed=1 left_in=0 out=1048576 left_out=1046528 total=4096 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1428] in=1 consumed=1 left_in=0 out=1048576 left_out=1046528 total=6144 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1429] in=1 consumed=1 left_in=0 out=1048576 left_out=1046528 total=8192 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1430] in=1 consumed=1 left_in=0 out=1048576 left_out=1046528 total=10240 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1431] in=1 consumed=1 left_in=0 out=1048576 left_out=1046528 total=12288 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1432] in=1 consumed=1 left_in=0 out=1048576 left_out=1046528 total=14336 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1433] in=1 consumed=1 left_in=0 out=1048576 left_out=1046528 total=16384 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1434] in=1 consumed=1 left_in=0 out=1048576 left_out=1046528 total=18432 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1435] in=1 consumed=1 left_in=0 out=1048576 left_out=1046528 total=20480 -> NEEDS_MORE_INPUT code=2
+[COPY] pos=67052752 len=4 rb=0x51b000000080 size=1024 mask=1023 roundtrips=21 partial_out=21504 buf_len=28
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==6387==ERROR: AddressSanitizer: SEGV on unknown address 0x51b003ff2550 (pc 0x594abf50aa1d bp 0x7ffc64600e00 sp 0x7ffc64600c10 T0)
+==6387==The signal is caused by a WRITE memory access.
+    #0 0x594abf50aa1d in memcpy /usr/include/x86_64-linux-gnu/bits/string_fortified.h:29
+    #1 0x594abf50aa1d in memmove16 dbg3-v120/c/dec/decode.c:202
+    #2 0x594abf50aa1d in ProcessCommandsInternal dbg3-v120/c/dec/decode.c:2299
+    #3 0x594abf50aa1d in ProcessCommands dbg3-v120/c/dec/decode.c:2362
+    #4 0x594abf51261f in BrotliDecoderDecompressStream dbg3-v120/c/dec/decode.c:2804
+    #5 0x594abf517188 in step /home/wang/brotli-lab/harness_two_stage.c:37
+    #6 0x594abf5179a2 in main /home/wang/brotli-lab/harness_two_stage.c:97
+    #7 0x758ee002a1c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #8 0x758ee002a28a in __libc_start_main_impl ../csu/libc-start.c:360
+    #9 0x594abf4fc4e4 in _start (/home/wang/brotli-lab/build-v120/harness_two_stage_copy_asan+0x34e4) (BuildId: 81e52bf62fe59a17ce5e6baa3b5742cbb621e671)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /usr/include/x86_64-linux-gnu/bits/string_fortified.h:29 in memcpy
+==6387==ABORTING
+rc=1
+COPY_MATRIX_DONE

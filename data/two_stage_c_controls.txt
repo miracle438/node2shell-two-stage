@@ -1,0 +1,245 @@
+===== v120-poison-27 =====
+[INFO] file=poison_full.bro total=23069747 stage1=23069720 stage2=27 in_chunk=16384 out_chunk=816
+[CALL s1 #1] in=16384 consumed=1028 left_in=15356 out=816 left_out=0 total=816 -> NEEDS_MORE_OUTPUT code=3
+[CALL s1 #2] in=16384 consumed=16384 left_in=0 out=816 left_out=608 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #3] in=16384 consumed=16384 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #4] in=16384 consumed=16384 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #5] in=16384 consumed=16384 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #6] in=16384 consumed=16384 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[INFO] stage1 done: cur_off=23069720 left=0
+[CALL s2 #1411] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1412] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1413] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1414] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1415] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1416] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1417] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1418] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1419] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1420] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1421] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1422] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1423] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1424] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1425] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1426] in=1 consumed=1 left_in=0 out=816 left_out=608 total=1232 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1427] in=1 consumed=1 left_in=0 out=816 left_out=0 total=2048 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1428] in=1 consumed=1 left_in=0 out=816 left_out=0 total=2864 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1429] in=1 consumed=1 left_in=0 out=816 left_out=0 total=3680 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1430] in=1 consumed=1 left_in=0 out=816 left_out=0 total=4496 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1431] in=1 consumed=1 left_in=0 out=816 left_out=0 total=5312 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1432] in=1 consumed=1 left_in=0 out=816 left_out=0 total=6128 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1433] in=1 consumed=1 left_in=0 out=816 left_out=0 total=6944 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1434] in=1 consumed=1 left_in=0 out=816 left_out=0 total=7760 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1435] in=1 consumed=1 left_in=0 out=816 left_out=0 total=8576 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1436] in=1 consumed=1 left_in=0 out=816 left_out=0 total=9392 -> NEEDS_MORE_INPUT code=2
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==6032==ERROR: AddressSanitizer: SEGV on unknown address 0x51b003ff5550 (pc 0x63420f2e389b bp 0x7fffa02d6a90 sp 0x7fffa02d68a0 T0)
+==6032==The signal is caused by a WRITE memory access.
+    #0 0x63420f2e389b in memcpy /usr/include/x86_64-linux-gnu/bits/string_fortified.h:29
+    #1 0x63420f2e389b in memmove16 brotli-1.2.0/c/dec/decode.c:187
+    #2 0x63420f2e389b in ProcessCommandsInternal brotli-1.2.0/c/dec/decode.c:2283
+    #3 0x63420f2e389b in ProcessCommands brotli-1.2.0/c/dec/decode.c:2346
+    #4 0x63420f2eb452 in BrotliDecoderDecompressStream brotli-1.2.0/c/dec/decode.c:2788
+    #5 0x63420f2effbb in step /home/wang/brotli-lab/harness_two_stage.c:37
+    #6 0x63420f2f07d5 in main /home/wang/brotli-lab/harness_two_stage.c:97
+    #7 0x7c518d22a1c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #8 0x7c518d22a28a in __libc_start_main_impl ../csu/libc-start.c:360
+    #9 0x63420f2d54e4 in _start (/home/wang/brotli-lab/build-v120/harness_two_stage_plain_asan+0x34e4) (BuildId: 3415720778393fda8f2aaaa2a40294ed88f27d3d)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV /usr/include/x86_64-linux-gnu/bits/string_fortified.h:29 in memcpy
+==6032==ABORTING
+rc=1
+===== v121-poison-27 =====
+[INFO] file=poison_full.bro total=23069747 stage1=23069720 stage2=27 in_chunk=16384 out_chunk=816
+[CALL s1 #1] in=16384 consumed=1028 left_in=15356 out=816 left_out=0 total=816 -> NEEDS_MORE_OUTPUT code=3
+[CALL s1 #2] in=16384 consumed=16384 left_in=0 out=816 left_out=608 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #3] in=16384 consumed=16384 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #4] in=16384 consumed=16384 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #5] in=16384 consumed=16384 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #6] in=16384 consumed=16384 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #1410] in=20 consumed=17 left_in=3 out=816 left_out=816 total=1024 -> ERROR code=-17
+[INFO] stage1 done: cur_off=23069717 left=3
+[CALL s2 #1411] in=1 consumed=0 left_in=1 out=816 left_out=816 total=1024 -> ERROR code=-17
+[INFO] stage2 done: cur_off=23069717
+[CALL fill #1412] in=1 consumed=0 left_in=1 out=816 left_out=816 total=1024 -> ERROR code=-17
+rc=0
+===== v120-poison-no-stage2 =====
+[INFO] file=poison_full.bro total=23069747 stage1=23069747 stage2=0 in_chunk=16384 out_chunk=816
+[CALL s1 #1] in=16384 consumed=1028 left_in=15356 out=816 left_out=0 total=816 -> NEEDS_MORE_OUTPUT code=3
+[CALL s1 #2] in=16384 consumed=16384 left_in=0 out=816 left_out=608 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #3] in=16384 consumed=16384 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #4] in=16384 consumed=16384 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #5] in=16384 consumed=16384 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #6] in=16384 consumed=16384 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[INFO] stage1 done: cur_off=23069747 left=0
+[INFO] stage2 done: cur_off=23069747
+[CALL fill #1411] in=1 consumed=1 left_in=0 out=816 left_out=0 total=1840 -> NEEDS_MORE_INPUT code=2
+=================================================================
+==6036==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x51b00000069e at pc 0x720d1d0fb42e bp 0x7ffeb1e1c0a0 sp 0x7ffeb1e1b848
+READ of size 816 at 0x51b00000069e thread T0
+    #0 0x720d1d0fb42d in memcpy ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors_memintrinsics.inc:115
+    #1 0x6350b56d76c5 in memcpy /usr/include/x86_64-linux-gnu/bits/string_fortified.h:29
+    #2 0x6350b56d76c5 in WriteRingBuffer brotli-1.2.0/c/dec/decode.c:1344
+    #3 0x6350b56e076e in BrotliDecoderDecompressStream brotli-1.2.0/c/dec/decode.c:2426
+    #4 0x6350b56e7fbb in step /home/wang/brotli-lab/harness_two_stage.c:37
+    #5 0x6350b56e887a in main /home/wang/brotli-lab/harness_two_stage.c:106
+    #6 0x720d1cc2a1c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #7 0x720d1cc2a28a in __libc_start_main_impl ../csu/libc-start.c:360
+    #8 0x6350b56cd4e4 in _start (/home/wang/brotli-lab/build-v120/harness_two_stage_plain_asan+0x34e4) (BuildId: 3415720778393fda8f2aaaa2a40294ed88f27d3d)
+
+0x51b00000069e is located 0 bytes after 1566-byte region [0x51b000000080,0x51b00000069e)
+allocated by thread T0 here:
+    #0 0x720d1d0fd9c7 in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:69
+    #1 0x6350b56cd689 in BrotliDefaultAllocFunc brotli-1.2.0/c/common/platform.c:12
+    #2 0x6350b56d79fc in BrotliEnsureRingBuffer brotli-1.2.0/c/dec/decode.c:1393
+    #3 0x6350b56d82ae in CopyUncompressedBlockToOutput brotli-1.2.0/c/dec/decode.c:1471
+    #4 0x6350b56e1e29 in BrotliDecoderDecompressStream brotli-1.2.0/c/dec/decode.c:2653
+    #5 0x6350b56e7fbb in step /home/wang/brotli-lab/harness_two_stage.c:37
+    #6 0x6350b56e86c6 in main /home/wang/brotli-lab/harness_two_stage.c:86
+    #7 0x720d1cc2a1c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #8 0x720d1cc2a28a in __libc_start_main_impl ../csu/libc-start.c:360
+    #9 0x6350b56cd4e4 in _start (/home/wang/brotli-lab/build-v120/harness_two_stage_plain_asan+0x34e4) (BuildId: 3415720778393fda8f2aaaa2a40294ed88f27d3d)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors_memintrinsics.inc:115 in memcpy
+Shadow bytes around the buggy address:
+  0x51b000000400: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x51b000000480: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x51b000000500: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x51b000000580: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x51b000000600: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x51b000000680: 00 00 00[06]fa fa fa fa fa fa fa fa fa fa fa fa
+  0x51b000000700: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x51b000000780: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x51b000000800: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x51b000000880: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x51b000000900: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==6036==ABORTING
+rc=1
+===== v120-groom-127 =====
+[INFO] file=groom_full.bro total=23069847 stage1=23069720 stage2=127 in_chunk=16384 out_chunk=816
+[CALL s1 #1] in=16384 consumed=1028 left_in=15356 out=816 left_out=0 total=816 -> NEEDS_MORE_OUTPUT code=3
+[CALL s1 #2] in=16384 consumed=16384 left_in=0 out=816 left_out=608 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #3] in=16384 consumed=16384 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #4] in=16384 consumed=16384 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #5] in=16384 consumed=16384 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #6] in=16384 consumed=16384 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[INFO] stage1 done: cur_off=23069720 left=0
+[CALL s2 #1411] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1412] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1413] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1414] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1415] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1416] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1417] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1418] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1419] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1420] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1421] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1422] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1423] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1424] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1425] in=1 consumed=1 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1426] in=1 consumed=1 left_in=0 out=816 left_out=561 total=1279 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1427] in=1 consumed=1 left_in=0 out=816 left_out=47 total=2048 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1428] in=1 consumed=1 left_in=0 out=816 left_out=0 total=2864 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1429] in=1 consumed=1 left_in=0 out=816 left_out=0 total=3680 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1430] in=1 consumed=1 left_in=0 out=816 left_out=0 total=4496 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1431] in=1 consumed=1 left_in=0 out=816 left_out=0 total=5312 -> NEEDS_MORE_INPUT code=2
+[CALL s2 #1432] in=1 consumed=1 left_in=0 out=816 left_out=0 total=6128 -> NEEDS_MORE_INPUT code=2
+=================================================================
+==6039==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x51b00000069e at pc 0x7866ec6fb42e bp 0x7ffeccd9c0e0 sp 0x7ffeccd9b888
+READ of size 816 at 0x51b00000069e thread T0
+    #0 0x7866ec6fb42d in memcpy ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors_memintrinsics.inc:115
+    #1 0x5ca2a8c2f6c5 in memcpy /usr/include/x86_64-linux-gnu/bits/string_fortified.h:29
+    #2 0x5ca2a8c2f6c5 in WriteRingBuffer brotli-1.2.0/c/dec/decode.c:1344
+    #3 0x5ca2a8c3876e in BrotliDecoderDecompressStream brotli-1.2.0/c/dec/decode.c:2426
+    #4 0x5ca2a8c3ffbb in step /home/wang/brotli-lab/harness_two_stage.c:37
+    #5 0x5ca2a8c407d5 in main /home/wang/brotli-lab/harness_two_stage.c:97
+    #6 0x7866ec22a1c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #7 0x7866ec22a28a in __libc_start_main_impl ../csu/libc-start.c:360
+    #8 0x5ca2a8c254e4 in _start (/home/wang/brotli-lab/build-v120/harness_two_stage_plain_asan+0x34e4) (BuildId: 3415720778393fda8f2aaaa2a40294ed88f27d3d)
+
+0x51b00000069e is located 0 bytes after 1566-byte region [0x51b000000080,0x51b00000069e)
+allocated by thread T0 here:
+    #0 0x7866ec6fd9c7 in malloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:69
+    #1 0x5ca2a8c25689 in BrotliDefaultAllocFunc brotli-1.2.0/c/common/platform.c:12
+    #2 0x5ca2a8c2f9fc in BrotliEnsureRingBuffer brotli-1.2.0/c/dec/decode.c:1393
+    #3 0x5ca2a8c302ae in CopyUncompressedBlockToOutput brotli-1.2.0/c/dec/decode.c:1471
+    #4 0x5ca2a8c39e29 in BrotliDecoderDecompressStream brotli-1.2.0/c/dec/decode.c:2653
+    #5 0x5ca2a8c3ffbb in step /home/wang/brotli-lab/harness_two_stage.c:37
+    #6 0x5ca2a8c406c6 in main /home/wang/brotli-lab/harness_two_stage.c:86
+    #7 0x7866ec22a1c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #8 0x7866ec22a28a in __libc_start_main_impl ../csu/libc-start.c:360
+    #9 0x5ca2a8c254e4 in _start (/home/wang/brotli-lab/build-v120/harness_two_stage_plain_asan+0x34e4) (BuildId: 3415720778393fda8f2aaaa2a40294ed88f27d3d)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors_memintrinsics.inc:115 in memcpy
+Shadow bytes around the buggy address:
+  0x51b000000400: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x51b000000480: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x51b000000500: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x51b000000580: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x51b000000600: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x51b000000680: 00 00 00[06]fa fa fa fa fa fa fa fa fa fa fa fa
+  0x51b000000700: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x51b000000780: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x51b000000800: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x51b000000880: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x51b000000900: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==6039==ABORTING
+rc=1
+===== v121-groom-127 =====
+[INFO] file=groom_full.bro total=23069847 stage1=23069720 stage2=127 in_chunk=16384 out_chunk=816
+[CALL s1 #1] in=16384 consumed=1028 left_in=15356 out=816 left_out=0 total=816 -> NEEDS_MORE_OUTPUT code=3
+[CALL s1 #2] in=16384 consumed=16384 left_in=0 out=816 left_out=608 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #3] in=16384 consumed=16384 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #4] in=16384 consumed=16384 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #5] in=16384 consumed=16384 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #6] in=16384 consumed=16384 left_in=0 out=816 left_out=816 total=1024 -> NEEDS_MORE_INPUT code=2
+[CALL s1 #1410] in=20 consumed=17 left_in=3 out=816 left_out=816 total=1024 -> ERROR code=-17
+[INFO] stage1 done: cur_off=23069717 left=3
+[CALL s2 #1411] in=1 consumed=0 left_in=1 out=816 left_out=816 total=1024 -> ERROR code=-17
+[INFO] stage2 done: cur_off=23069717
+[CALL fill #1412] in=1 consumed=0 left_in=1 out=816 left_out=816 total=1024 -> ERROR code=-17
+rc=0
+C_CONTROLS_DONE

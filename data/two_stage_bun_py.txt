@@ -1,0 +1,39 @@
+===== bun143-full =====
+bun 1.4.3 file poison_full.bro stage1 23069720 stage2 27
+ERR Z_BUF_ERROR unexpected end of file
+still alive, out 2048
+exit 0 out 2048
+rc=0
+===== bun143-stage1only =====
+bun 1.4.3 file poison_stream.bro stage1 23069720 stage2 0
+ERR Z_BUF_ERROR unexpected end of file
+still alive, out 1024
+exit 0 out 1024
+rc=0
+===== bun144-full =====
+bun 1.4.4 file poison_full.bro stage1 23069720 stage2 27
+ERR ERR__ERROR_FORMAT_BLOCK_SWITCH Decompression failed
+exit 0 out 816
+rc=0
+===== py110-full =====
+timeout: 被监视的命令已核心转储
+rc=139
+===== py110-stage1only =====
+brotli 1.1.0 stage1 23069720 stage2 0
+stage1 returned=1024 finished=False
+NO-ERROR total=1024
+rc=0
+===== py110-fault =====
+Fatal Python error: Segmentation fault
+
+Current thread 0x00007310039a9080 (most recent call first):
+  File "/home/wang/brotli-lab/two_stage_py.py", line 23 in <module>
+
+Extension modules: _brotli (total: 1)
+timeout: 被监视的命令已核心转储
+rc=139
+===== py121-full =====
+brotli 1.2.1 stage1 23069720 stage2 27
+ERROR: brotli: decoder failed
+rc=0
+BUN_PY_DONE

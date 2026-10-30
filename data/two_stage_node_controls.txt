@@ -1,0 +1,33 @@
+===== v120-poison-27 ./build-v120/harness_two_stage_plain_asan poison_full.bro 27 16384 0x330 =====
+timeout: 无法运行命令 "v120-poison-27": 没有那个文件或目录
+rc=127
+===== v121-poison-27 ./build-v121/harness_two_stage_plain_asan poison_full.bro 27 16384 0x330 =====
+timeout: 无法运行命令 "v121-poison-27": 没有那个文件或目录
+rc=127
+===== v120-poison-no-stage2 ./build-v120/harness_two_stage_plain_asan poison_full.bro 0 16384 0x330 =====
+timeout: 无法运行命令 "v120-poison-no-stage2": 没有那个文件或目录
+rc=127
+===== v120-groom-127 ./build-v120/harness_two_stage_plain_asan groom_full.bro 127 16384 0x330 =====
+timeout: 无法运行命令 "v120-groom-127": 没有那个文件或目录
+rc=127
+===== v121-groom-127 ./build-v121/harness_two_stage_plain_asan groom_full.bro 127 16384 0x330 =====
+timeout: 无法运行命令 "v121-groom-127": 没有那个文件或目录
+rc=127
+===== node24.22.0 poison =====
+node v24.22.0 file poison_full.bro stage1 23069720 stage2 27
+timeout: 被监视的命令已核心转储
+rc=139
+===== node24.22.1 poison =====
+node v24.22.1 file poison_full.bro stage1 23069720 stage2 27
+ERR ERR__ERROR_FORMAT_BLOCK_SWITCH Decompression failed
+exit 0 out 816
+rc=0
+===== node24.22.0 groom =====
+node v24.22.0 file groom_full.bro stage1 23069720 stage2 127
+rc=124
+===== node24.22.1 groom =====
+node v24.22.1 file groom_full.bro stage1 23069720 stage2 127
+ERR ERR__ERROR_FORMAT_BLOCK_SWITCH Decompression failed
+exit 0 out 816
+rc=0
+CONTROLS_DONE
